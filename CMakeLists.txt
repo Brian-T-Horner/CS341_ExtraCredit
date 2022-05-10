@@ -3,4 +3,5 @@ project(ExtraCredit)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(ExtraCredit main.cpp Node.cpp)
+add_executable(ExtraCredit main.cpp StudentNode.cpp
+        StudentLinkedList.cpp ClassLinkedList.cpp ClassNode.cpp)
