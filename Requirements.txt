@@ -1,0 +1,35 @@
+Students in ABC College are enrolling in courses.
+Each student may enrol in up to four courses.
+
+The available courses are
+French, History, Mathematics, Biology,
+Literature, German, Italian. Physics, Chemistry,
+Drama and Education.
+
+The maximum number of courses in which each student may enroll is four.
+However, a student may enroll in 1, 2 or 3 courses.
+
+
+For example,
+Anna wants to enroll in French, Literature, Drama and Education;
+Brian wants to enroll in Mathematics and Physics;
+Charles wants to enroll in Bioloy, German and Chemistry and
+Doris wants to enroll in Italian.
+
+Please write your program so that the student names and courses
+must be entered at the keyboard.
+
+You may construct other students and courses which follow the rule of 1 to 4 classes
+per student to serve as data fpr your program.
+
+The data must be entered manually at the user’s keyboard.
+Please set up a linked list which accepts the first name of each student.
+Then for each student the program accepts the list of courses in which the student
+wishes to enroll.  Also, the program sets up a linked list of courses for each student.
+The program should use C++ class to set up the procedure for entering the
+students, and another C++ class to manage the courses in which the student
+is enrolled.
+
+In addition, the program needs to produce a list of the first names of the students.
+Also, for each student individually the program should produce a list of the courses
+in which the student has enrolled.
