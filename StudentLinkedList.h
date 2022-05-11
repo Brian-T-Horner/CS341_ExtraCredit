@@ -12,6 +12,8 @@
 // --- Standard Library Includes ---
 
 // --- User Defined Includes ---
+#include "StudentNode.h"
+
 
 class StudentLinkedList {
 
@@ -25,7 +27,6 @@ public:
 
     // --- Print Methods ---
     void printStudents();
-    void printStudentsClass(std::string&);
 
 
     // --- Deletion Methods ---
@@ -37,6 +38,7 @@ public:
     StudentNode* getHeadNode();
     StudentNode* getTailNode();
     int getNumStudents();
+
 
 
     // --- Set Methods ---

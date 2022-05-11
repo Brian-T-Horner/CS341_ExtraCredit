@@ -3,6 +3,10 @@
 // Author: Brian Horner
 // Edit History:
 // 5/10/2022 - Initial version
+// 5/10/2022 - Added constructor, get and set methods
+// 5/10/2022 - Added general methods for adding, deleting and finding a
+// specific class
+// 5/10/2022 - Removed general methods and relocated in studentNode class
 
 
 #ifndef CLASSLINKEDLIST_H
@@ -19,17 +23,10 @@ public:
     // --- Constructor ---
     ClassLinkedList();
 
-    // --- General Methods ---
-    void addClass(std::string&);
-    void deleteClass(std::string&);
-    ClassNode* findClass(std::string&);
-
-
-
     // --- Get Methods ---
     ClassNode * getHeadNode();
     ClassNode * getTailNode();
-    int getNumClasses();
+
 
     // --- Set Methods ---
     void setHeadNode(ClassNode *);
@@ -42,7 +39,6 @@ public:
 private:
     ClassNode* headNode{nullptr};
     ClassNode * tailNode{nullptr};
-    int numClasses{0};
 };
 
 
