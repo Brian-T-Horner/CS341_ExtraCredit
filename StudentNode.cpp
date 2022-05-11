@@ -31,16 +31,32 @@ void StudentNode::addClass(std::string &newClass) {
         ClassNode * temp = new ClassNode;
         if(temp!= nullptr){
             temp->setClassName(newClass);
+
             if(classList.getHeadNode() == nullptr){
+                // If there is no node
                 classList.setHeadNode(temp);
                 classList.setTailNode(temp);
                 numClasses +=1;
                 std::cout << "\nAdded " <<newClass <<".\n"<<std::endl;
-            }else{
-                classList.getTailNode()->setNextClass(temp);
-                classList.setTailNode(temp);
-                numClasses +=1;
-                std::cout << "\nAdded " <<newClass <<".\n"<<std::endl;
+
+            }else if(classList.getHeadNode() != nullptr){
+                // if there is a head node
+                if(classList.getHeadNode() == classList.getTailNode()){
+                    // if there is only one node
+                    classList.setTailNode(temp);
+                    classList.getHeadNode()->setNextClass(temp);
+                    numClasses +=1;
+                    std::cout << "\nAdded " <<newClass <<".\n"<<std::endl;
+                }else if(classList.getHeadNode() != classList.getTailNode()){
+                    // if there is more than one node
+                    ClassNode * oldTail = classList.getTailNode();
+                    classList.getTailNode()->setNextClass(temp);
+                    classList.setTailNode(temp);
+                    classList.getTailNode()->setPreviousClass(oldTail);
+                    numClasses +=1;
+                    std::cout << "\nAdded " <<newClass <<".\n"<<std::endl;
+                }
+
             }
         }else{
             std::cout << "Error: Heap full. Please delete objects before trying "
@@ -98,14 +114,16 @@ void StudentNode::deleteClass(std::string &className) {
 
 // --- Delete classes method ---
 void StudentNode::deleteClasses() {
-    while(classList.getHeadNode()!= nullptr){
-        ClassNode * classListTemp = classList.getHeadNode();
-        classList.setHeadNode(classListTemp->getNextClass());
-        delete classListTemp;
-        classListTemp = nullptr;
-        numClasses-=1;
+    if(classList.getHeadNode() == nullptr){
+
+    }else if(classList.getHeadNode() != nullptr){
+        while(classList.getHeadNode()!= nullptr){
+            ClassNode * classListTemp = classList.getHeadNode();
+            classList.setHeadNode(classListTemp->getNextClass());
+            delete classListTemp;
+            numClasses-=1;
+        }
     }
-    std::cout << studentName <<"'s classes have been deleted."<<std::endl;
 }
 
 // --- Print classes method ---
