@@ -21,16 +21,21 @@ public:
 
     // Sets
     void setNextClass(ClassNode*);
+    void setPreviousClass(ClassNode*);
     void setClassName(std::string&);
 
     // Gets
     ClassNode* getNextClass();
+    ClassNode* getPreviousClass();
     std::string getClassName();
 
+    // Destructor
+    ~ClassNode();
 
 private:
     std::string className;
     ClassNode* nextClass{nullptr};
+    ClassNode * prevClass{nullptr};
 
 };
 

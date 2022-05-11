@@ -15,7 +15,34 @@
 
 
 class ClassLinkedList {
+public:
+    // --- Constructor ---
+    ClassLinkedList();
 
+    // --- General Methods ---
+    void addClass(std::string&);
+    void deleteClass(std::string&);
+    ClassNode* findClass(std::string&);
+
+
+
+    // --- Get Methods ---
+    ClassNode * getHeadNode();
+    ClassNode * getTailNode();
+    int getNumClasses();
+
+    // --- Set Methods ---
+    void setHeadNode(ClassNode *);
+    void setTailNode(ClassNode *);
+
+
+    // --- Destructor --
+    ~ClassLinkedList();
+
+private:
+    ClassNode* headNode{nullptr};
+    ClassNode * tailNode{nullptr};
+    int numClasses{0};
 };
 
 

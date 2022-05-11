@@ -7,7 +7,7 @@ Literature, German, Italian. Physics, Chemistry,
 Drama and Education.
 
 The maximum number of courses in which each student may enroll is four.
-However, a student may enroll in 1, 2 or 3 courses.
+However, a student may enroll in 1, 2 or 3 courses.-
 
 
 For example,

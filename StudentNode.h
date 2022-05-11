@@ -12,7 +12,7 @@
 #include <string>
 
 // --- User Defined Includes ---
-#include "ClassLinkedList.h"
+#include "ClassNode.h"
 
 
 class StudentNode {
@@ -20,21 +20,35 @@ class StudentNode {
 public:
     StudentNode ();
 
+    // Classes Methods
+    // Add classes method???
+     void printClasses();
+     void deleteClasses();
+
     // Sets
     void setNextStudent(StudentNode*);
+    void setPreviousStudent(StudentNode*);
     void setStudentName(std::string&);
-    void setClassLinkedList(ClassLinkedList*);
+    void setClassLinkedList(ClassNode*);
+
 
     // Gets
     StudentNode* getNextStudent();
+    StudentNode* getPreviousStudent();
     std::string getStudentName();
-    //TODO:: Set class list
+    ClassNode * getClassList();
+    int getNumberClasses();
 
+    // Destructor
+    ~StudentNode();
 
 private:
     std::string studentName;
     StudentNode* nextStudent{nullptr};
-    Class
+    StudentNode* previousStudent{nullptr};
+    ClassNode * classList{nullptr};
+    int numClasses{0};
+
 
 
 };

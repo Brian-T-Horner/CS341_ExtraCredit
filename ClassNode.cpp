@@ -19,7 +19,12 @@ ClassNode::ClassNode() {
 // --- Set Functions ---
 void ClassNode::setClassName(std::string & newName) {className=newName;}
 void ClassNode::setNextClass(ClassNode * nextNode){nextClass=nextNode;}
+void ClassNode::setPreviousClass(ClassNode *prevNode) {prevClass = prevNode;}
 
 // --- Get Functions ---
 std::string ClassNode::getClassName() {return className;}
 ClassNode *ClassNode::getNextClass() {return nextClass;}
+ClassNode *ClassNode::getPreviousClass() {return prevClass;}
+
+// --- Destructor ---
+ClassNode::~ClassNode(){}
